@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 8213718383915806692}
   - component: {fileID: 1865698073467213211}
   - component: {fileID: 6459541791037024599}
-  m_Layer: 0
+  - component: {fileID: 9030096355098545880}
+  m_Layer: 7
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,6 +40,7 @@ Transform:
   - {fileID: 357028193590449249}
   - {fileID: 27680553143799730}
   - {fileID: 7103087069865679846}
+  - {fileID: 280158084355172369}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6451588922062926379
@@ -292,6 +294,21 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 6f966b9a7c817ed49973b4a8762cbbdf, type: 3}
+--- !u!114 &9030096355098545880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47962538275779153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc234284ef625df498528d280bb5d551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _muzzlePoint: {fileID: 280158084355172369}
+  _bulletPrefab: {fileID: 6520631789979980527, guid: 128c20ac312e34c44b084f17f3596d5b,
+    type: 3}
 --- !u!1 &311573905493937473
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,7 +321,7 @@ GameObject:
   - component: {fileID: 3744375837163497350}
   - component: {fileID: 3698043067262440588}
   - component: {fileID: 1925622720056797423}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,10 +404,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9030096355098545880}
+        m_TargetAssemblyTypeName: Gun, Assembly-CSharp
+        m_MethodName: Reload
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9030096355098545880}
+        m_TargetAssemblyTypeName: Gun, Assembly-CSharp
+        m_MethodName: Unload
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_OnHoverEntered:
@@ -418,6 +459,37 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+--- !u!1 &446161736792931274
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 280158084355172369}
+  m_Layer: 7
+  m_Name: muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &280158084355172369
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446161736792931274}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.4585}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 917425207396546051}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &3142519954677845217
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,7 +500,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7103087069865679846}
   - component: {fileID: 2350389002002191342}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Handle_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,7 +556,7 @@ GameObject:
   - component: {fileID: 5081509341782293380}
   - component: {fileID: 2492387825454552247}
   - component: {fileID: 5583934153486697399}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bolt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -566,7 +638,7 @@ GameObject:
   m_Component:
   - component: {fileID: 27680553143799730}
   - component: {fileID: 2114481968523929995}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -622,7 +694,7 @@ GameObject:
   - component: {fileID: 357028193590449249}
   - component: {fileID: 874075003951801633}
   - component: {fileID: 7102661193927346582}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}

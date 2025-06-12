@@ -5,8 +5,19 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Gun : MonoBehaviour
 {
+    [SerializeField] private Transform _muzzlePoint;
+    [SerializeField] private GameObject _bulletPrefab;
+
     private bool _isReload;
 
+    public void Shot(ActivateEventArgs args)
+    {
+        if (!_isReload) return;
+
+        GameObject bullte = Instantiate(_bulletPrefab, _muzzlePoint.position, _muzzlePoint.rotation);
+
+        bullte.GetComponent<Rigidbody>().AddForce(bullte.transform.forward * 10f, ForceMode.Impulse);
+    }
 
     public void Reload(SelectEnterEventArgs arg)
     {

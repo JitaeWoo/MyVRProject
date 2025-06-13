@@ -7,6 +7,7 @@ public class Gun : MonoBehaviour
 {
     [SerializeField] private Transform _muzzlePoint;
     [SerializeField] private GameObject _bulletPrefab;
+    [SerializeField] private float _shootPower = 10f;
 
     private bool _isReload;
 
@@ -16,7 +17,7 @@ public class Gun : MonoBehaviour
 
         GameObject bullte = Instantiate(_bulletPrefab, _muzzlePoint.position, _muzzlePoint.rotation);
 
-        bullte.GetComponent<Rigidbody>().AddForce(bullte.transform.forward * 10f, ForceMode.Impulse);
+        bullte.GetComponent<Rigidbody>().AddForce(bullte.transform.forward * _shootPower, ForceMode.Impulse);
     }
 
     public void Reload(SelectEnterEventArgs arg)

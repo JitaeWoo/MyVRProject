@@ -26,10 +26,11 @@ public class ShootingTarget : MonoBehaviour
 
     private IEnumerator AttackedTarget()
     {
-        _joint.DORotate(_attackedRotate, 1f);
+        _joint.DOLocalRotateQuaternion(Quaternion.Euler(_attackedRotate), 1f);
 
         yield return _delay;
 
-        _joint.DORotate(Vector3.zero, 1f);
+        _joint.DOLocalRotateQuaternion(Quaternion.Euler(Vector3.zero), 1f);
+        _delayCoroutine = null;
     }
 }

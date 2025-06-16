@@ -321,6 +321,7 @@ MonoBehaviour:
   _muzzlePoint: {fileID: 280158084355172369}
   _bulletPrefab: {fileID: 6520631789979980527, guid: 128c20ac312e34c44b084f17f3596d5b,
     type: 3}
+  _shootPower: 20
 --- !u!1 &311573905493937473
 GameObject:
   m_ObjectHideFlags: 0

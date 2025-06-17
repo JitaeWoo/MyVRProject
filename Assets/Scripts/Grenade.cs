@@ -24,6 +24,8 @@ public class Grenade : MonoBehaviour
 
     public void PinOut(SelectExitEventArgs args)
     {
+        if (!gameObject.activeSelf) return;
+
         args.interactableObject.transform.gameObject.layer = LayerMask.NameToLayer("Default");
         StartCoroutine(StartCountDown());
     }

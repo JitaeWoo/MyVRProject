@@ -11,6 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gun.unity
     guid: 2815e1f4e12498d498192f2758de22a0
+  - enabled: 1
+    path: Assets/Scenes/Shield.unity
+    guid: 261d92a277beab24f978f27ccf199f7a
+  - enabled: 1
+    path: Assets/Scenes/Grenade.unity
+    guid: 3f0a43c93a05f304283eb81463f46bef
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 80d88f818eb31ce4a89d1639b2aa6184,
       type: 2}

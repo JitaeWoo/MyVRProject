@@ -11,7 +11,7 @@ public class Gun : MonoBehaviour
 
     private bool _isReload;
 
-    public void Shoot(ActivateEventArgs args)
+    public void Shoot(ActivateEventArgs args = null)
     {
         if (!_isReload) return;
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,8 @@ public class Grenade : MonoBehaviour
 {
     [SerializeField] private GameObject _pinPrefab;
     [SerializeField] private Transform _pinTransform;
+
+    public event Action OnExploded;
 
     private WaitForSeconds _delay;
     private float _countTime = 5f;
@@ -28,6 +31,7 @@ public class Grenade : MonoBehaviour
     private void Explosion()
     {
         Debug.Log("Explosion");
+        OnExploded?.Invoke();
     }
 
     private IEnumerator StartCountDown()

@@ -8,6 +8,7 @@ public class Grenade : MonoBehaviour
 {
     [SerializeField] private GameObject _pinPrefab;
     [SerializeField] private Transform _pinTransform;
+    [SerializeField] private GameObject _explosionEffectPrefab;
 
     public event Action OnExploded;
 
@@ -33,7 +34,9 @@ public class Grenade : MonoBehaviour
     private void Explosion()
     {
         Debug.Log("Explosion");
+        Instantiate(_explosionEffectPrefab, transform.position, Quaternion.identity);
         OnExploded?.Invoke();
+        Destroy(gameObject);
     }
 
     private IEnumerator StartCountDown()
